@@ -192,14 +192,14 @@ img {
 /* ============== HOME ============== */
 .home {
   background-color: var(--body-color);
-  padding: 9rem 0 2rem;
+  padding: 5rem 0 2rem;
   height: 100vh;
   display: grid;
 }
 .home__container {
   display: grid;
   align-content: center;
-  row-gap: 2.5rem;
+  row-gap: 2.2rem;
 }
 .home__data {
   text-align: center;
