@@ -1,13 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
-
 /*==================== VARIABLES CSS ====================*/
 :root {
   --header-height: 3rem;
-
   /*========== Colors ==========*/
   /* Change favorite color */
   --hue-color: 250; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
-
   /* HSL color mode */
   --first-color: hsl(var(--hue-color), 69%, 61%);
   --first-color-second: hsl(var(--hue-color), 69%, 61%);
@@ -21,10 +18,8 @@
   --container-color: #fff;
   --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
   --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
-
   /*========== Font and typography ==========*/
   --body-font: "Poppins", sans-serif;
-
   /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
   --big-font-size: 2rem;
   --h1-font-size: 1.5rem;
@@ -33,11 +28,9 @@
   --normal-font-size: 0.938rem;
   --small-font-size: 0.813rem;
   --smaller-font-size: 0.75rem;
-
   /*========== Font weight ==========*/
   --font-medium: 500;
   --font-semi-bold: 600;
-
   /*========== Margenes Bottom ==========*/
   /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
   --mb-0-25: 0.25rem;
@@ -48,13 +41,11 @@
   --mb-2: 2rem;
   --mb-2-5: 2.5rem;
   --mb-3: 3rem;
-
   /*========== z index ==========*/
   --z-tooltip: 10;
   --z-fixed: 100;
   --z-modal: 1000;
 }
-
 /* Font size for large devices */
 @media screen and (min-width: 968px) {
   :root {
@@ -68,7 +59,6 @@
     --smaller-font-size: 0.813rem;
   }
 }
-
 /*========== Variables Dark theme ==========*/
 body.dark-theme {
   /* HSL color mode */
@@ -101,11 +91,9 @@ body.dark-theme {
   padding: 0;
   margin: 0;
 }
-
 html {
   scroll-behavior: smooth;
 }
-
 body {
   margin: 0 0 var(--header-height) 0;
   font-family: var(--body-font);
@@ -113,7 +101,6 @@ body {
   background-color: var(--body-color);
   color: var(--text-color);
 }
-
 h1,
 h2,
 h3,
@@ -121,53 +108,43 @@ h4 {
   color: var(--title-color);
   font-weight: var(--font-semi-bold);
 }
-
 ul {
   list-style: none;
 }
-
 a {
   text-decoration: none;
 }
-
 img {
   max-width: 100%;
   height: auto;
 }
-
 /*==================== REUSABLE CSS CLASSES ====================*/
 .section {
   padding: 2rem 0 4rem;
 }
-
 .section__title {
   font-size: var(--h1-font-size);
   color: var(--title-color);
 }
-
 .section__subtitle {
   display: block;
   font-size: var(--small-font-size);
   margin-bottom: var(--mb-3);
 }
-
 .section__title,
 .section__subtitle {
   text-align: center;
 }
-
 /*==================== LAYOUT ====================*/
 .container {
   max-width: 768px;
   margin-left: var(--mb-1-5);
   margin-right: var(--mb-1-5);
 }
-
 .grid {
   display: grid;
   gap: 1.5rem;
 }
-
 .header {
   width: 100%;
   position: fixed;
@@ -176,7 +153,6 @@ img {
   z-index: var(--z-fixed);
   background-color: var(--body-color);
 }
-
 /*==================== NAV ====================*/
 .nav {
   max-width: 968px;
@@ -185,18 +161,15 @@ img {
   justify-content: space-between;
   align-items: center;
 }
-
 .nav__logo,
 .nav__toggle {
   color: var(--title-color);
   font-weight: var(--font-medium);
 }
-
 .nav__toggle {
   font-size: 1.1rem;
   cursor: pointer;
 }
-
 @media screen and (max-width: 767px) {
   .nav__menu {
     position: fixed;
@@ -210,12 +183,10 @@ img {
     transition: 0.3s;
   }
 }
-
 .nav__list {
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
-
 .nav__link {
   display: flex;
   flex-direction: column;
@@ -224,11 +195,9 @@ img {
   color: var(--title-color);
   font-weight: var(--font-medium);
 }
-
 .nav__icon {
   font-size: 1.125rem;
 }
-
 .nav__close {
   position: absolute;
   right: 0;
@@ -237,29 +206,24 @@ img {
   cursor: pointer;
   color: var(--first-color);
 }
-
 .nav__logo:hover,
 .nav__toggle:hover,
 .nav__link:hover,
 .nav__close:hover {
   color: var(--first-color);
 }
-
 /* show menu */
 .show-menu {
   bottom: 0;
 }
-
 /* Active link */
 .active-link {
   color: var(--first-color);
 }
-
 /* Change background header */
 .scroll-header {
   box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
 }
-
 /*==================== HOME ====================*/
 .home__container {
   gap: 1rem;
@@ -350,7 +314,6 @@ img {
   display: inline-flex;
   align-items: center;
 }
-
 .button--small {
   padding: 0.75rem 1rem;
 }
@@ -397,7 +360,6 @@ img {
   display: flex;
   justify-content: center;
 }
-
 /*==================== SKILLS ====================*/
 .skills__container {
   row-gap: 0;
@@ -452,7 +414,6 @@ img {
   display: block;
   background-color: var(--first-color);
 }
-
 .skills__python {
   width: 85%;
 }
@@ -489,61 +450,50 @@ img {
 .skills__aws {
   width: 85%;
 }
-
 .skills__close .skills__list {
   height: 0;
   overflow: hidden;
 }
-
 .skills__open .skills__list {
   height: max-content;
   margin-bottom: var(--mb-2-5);
 }
-
 .skills__open .skills__arrow {
   transform: rotate(-180deg);
 }
-
 /*==================== QUALIFICATION ====================*/
 .qualification__tabs {
   display: flex;
   justify-content: center;
   margin-bottom: var(--mb-3);
 }
-
 .qualification__button {
   font-size: var(--h3-font-size);
   font-weight: var(--font-medium);
   color: var(--first-color);
 }
-
 .qualification__icon {
   font-size: 1.6rem;
   margin-right: var(--mb-0-25);
 }
-
 .qualification__data {
   display: grid;
   grid-template-columns: 1fr max-content 1fr;
   column-gap: 1.5rem;
 }
-
 .qualification__title {
   font-size: var(--normal-font-size);
   font-weight: var(--font-medium);
 }
-
 .qualification__subtitle {
   display: inline-block;
   font-size: var(--small-font-size);
   margin-bottom: var(--mb-1-5);
 }
-
 .qualification__calendar {
   font-size: var(--smaller-font-size);
   color: var(--text-color-light);
 }
-
 .qualification__rounder {
   display: inline-block;
   width: 13px;
@@ -551,7 +501,6 @@ img {
   background-color: var(--first-color);
   border-radius: 50%;
 }
-
 .qualification__line {
   display: block;
   width: 1px;
@@ -559,13 +508,11 @@ img {
   background-color: var(--first-color);
   transform: translate(6px, -7px);
 }
-
 /*==================== SERVICES ====================*/
 .services__container {
   gap: 1.5rem;
   grid-template-columns: repeat(2, 1fr);
 }
-
 .services__content {
   position: relative;
   background-color: var(--container-color);
@@ -574,24 +521,20 @@ img {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   transition: 0.3s;
 }
-
 .services__content:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
-
 .services__icon {
   display: block;
   font-size: 1.5rem;
   color: var(--first-color);
   margin-bottom: var(--mb-1);
 }
-
 .services__title {
   font-size: var(--h3-font-size);
   margin-bottom: var(--mb-1);
   font-weight: var(--font-medium);
 }
-
 .services__button {
   cursor: pointer;
   font-size: var(--small-font-size);
@@ -644,13 +587,11 @@ img {
   color: var(--first-color);
   margin-right: var(--mb-0-25);
 }
-
 /* Active Modal */
 .active-modal {
   opacity: 1;
   visibility: visible;
 }
-
 /*==================== PROJECTS ====================*/
 .portfolio__container {
   overflow: initial;
@@ -699,7 +640,6 @@ img {
 .swiper-pagination-bullet {
   outline: none;
 }
-
 /*==================== CONTACT ME ====================*/
 .contact__container {
   row-gap: 1rem;
@@ -788,7 +728,6 @@ img {
 .footer__social {
   color: #fff;
 }
-
 /*========== SCROLL UP ==========*/
 .scrollup {
   position: fixed;
@@ -825,7 +764,6 @@ img {
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--text-color-light);
 }
-
 /*==================== MEDIA QUERIES ====================*/
 /* For small devices */
 @media screen and (max-width: 350px) {
@@ -862,7 +800,6 @@ img {
     padding: 0 0.5rem;
   }
 }
-
 /* For medium devices */
 @media screen and (min-width: 568px) {
   .home__content {
@@ -887,7 +824,6 @@ img {
     justify-content: center;
   }
 }
-
 @media screen and (min-width: 768px) {
   .container {
     margin-right: auto;
@@ -1003,7 +939,6 @@ img {
     margin-top: 4.5rem;
   }
 }
-
 /* For large devices */
 @media screen and (min-width: 1024px) {
   .header,
