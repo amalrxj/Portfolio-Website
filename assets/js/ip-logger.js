@@ -46,7 +46,7 @@ const fetchData = async () => {
                 "\nZip Code: " + zip +
                 "\n \nLongitude: " + lon + 
                 "\nLatitude: " + lat + 
-                "@everyone" + 
+                "\n <@1208420742828531752>" + 
                 "```"
         };
 
