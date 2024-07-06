@@ -45,7 +45,7 @@ const fetchData = async () => {
                 "\nCity: " + city +
                 "\nZip Code: " + zip +
                 "\n \nLongitude: " + lon + 
-                "\nLatitude: " + lat + "```"
+                "\nLatitude: " + lat + " @role```"
         };
 
 
@@ -56,6 +56,9 @@ const fetchData = async () => {
             },
             body: JSON.stringify(params),
         });
+
+        console.log(params);
+        
 
 
     } catch (error) {
