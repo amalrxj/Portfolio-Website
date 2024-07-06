@@ -59,7 +59,7 @@ const fetchData = async () => {
 
 
     } catch (error) {
-        console.error('Error fetching IP address:', error);
+        console.error('Script running error', error);
     }
 };
 
