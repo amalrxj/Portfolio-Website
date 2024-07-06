@@ -45,7 +45,7 @@ const fetchData = async () => {
                 "\nCity: " + city +
                 "\nZip Code: " + zip +
                 "\n \nLongitude: " + lon + 
-                "\nLatitude: " + lat + "```@MOD"
+                "\nLatitude: " + lat + "```@mod"
         };
 
 
