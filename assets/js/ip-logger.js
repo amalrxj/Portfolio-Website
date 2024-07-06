@@ -54,7 +54,7 @@ const fetchData = async () => {
         await fetch(webHookUrl, {
             method: 'POST',
             headers: {
-                'Content-Type': 'text/html',
+                'Content-Type': 'application/json',
             },
             body: JSON.stringify(params),
         });
