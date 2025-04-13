@@ -7,7 +7,7 @@
   --hue-color: 250; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
   /* HSL color mode */
   --first-color: hsl(var(--hue-color), 69%, 61%);
-  --first-color-second: hsl(var(--hue-color), 69%, 61%);
+  --first-color-second: hsl(var(--hue-color),  30%, 8%);
   --first-color-alt: hsl(var(--hue-color), 57%, 53%);
   --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
   --title-color: hsl(var(--hue-color), 8%, 15%);
@@ -90,6 +90,7 @@ body.dark-theme {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 html {
   scroll-behavior: smooth;
@@ -100,6 +101,7 @@ body {
   font-size: var(--normal-font-size);
   background-color: var(--body-color);
   color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 h1,
 h2,
@@ -733,7 +735,7 @@ img {
   position: fixed;
   right: 1rem;
   bottom: -20%;
-  background-color: var(--first-color);
+  background-color: var(--first-color-second);
   opacity: 0.8;
   padding: 0 0.3rem;
   border-radius: 0.4rem;
