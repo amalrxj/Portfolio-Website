@@ -218,8 +218,8 @@ img {
   display: block;
 }
 .home__title {
-  /* font-size: var(--biggest-font-size); */
-  font-size: clamp(2rem, 8vw, 5rem);
+  font-size: var(--biggest-font-size);
+  /* font-size: clamp(2rem, 8vw, 5rem); */
   margin: 0.75rem 0;
 }
 .home__button {
