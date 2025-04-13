@@ -5,24 +5,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#242329" />
-    <meta name="description" content="Amal, I love the challenge of coding and creating websites
-  that bring life to the ideas of my clients. My goal is to create
-  code that is beautiful, efficient and easy to understand." />
+    <title>Page Not Found | Amal Raj - FullStack Developer</title>
+    <meta name="description"
+        content="Oops! The page you're looking for was not found. Check out Amal Raj's portfolio, projects, and contact info.">
+    <meta name="keywords" content="Amal Raj, FullStack Developer, Portfolio, Projects, Contact" />
+    <meta name="author" content="Amal Raj" />
+    <meta name="robots" content="noindex, follow">
+    <meta name="googlebot" content="noindex, follow">
+    <link rel="canonical" href="https://amalrajkv.me/404.html" />
+
     <!-- ==================== GOOGLE FONTS ==================== -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+
     <!--==================== UNICONS ====================-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
+
     <!--==================== CSS ====================-->
     <link rel="stylesheet" href="assets/404/style.css">
+    <!-- <link rel="stylesheet" href="assets/404/style.css" media="print" onload="this.media='all'"> -->
+
     <!--=============== FAVICON ICONS ================-->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/img/icon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/img/icon/favicon-16x16.png">
     <link rel="manifest" href="/assets/img/icon/site.webmanifest">
 
-    <title>Page not found - Amal Raj</title>
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="404 Page Not Found | Amal Raj - FullStack Developer">
+    <meta property="og:description"
+        content="Oops! We couldn't find the page you were looking for. Check out Amal Raj's portfolio.">
+    <meta property="og:url" content="https://amalrajkv.me/404.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Amal Raj - FullStack Developer">
+
 </head>
 
 <body>
@@ -75,13 +94,13 @@
                 <div class="home__data">
                     <span class="home__subtitle">Error 404</span>
                     <h1 class="home__title">Hey Buddy</h1>
-                    <p class="hoome__desc">
+                    <p class="home__desc">
                         We can't seem to find the page <br> you are looking for.
                     </p>
-                    <a href="index.html#home" class="home__button">Go Home</a>
+                    <a href="/" class="home__button">Go Home</a>
                 </div>
                 <div class="home__img">
-                    <img src="assets/404/ghost-img.png" alt="ghost-img">
+                    <img src="assets/404/ghost.png" alt="ghost graphic">
                     <div class="home__shadow"></div>
                 </div>
             </div>
@@ -97,32 +116,29 @@
                     <span class="footer__subtitle">FullStack Developer</span>
                 </div>
                 <div class="footer__socials">
-                    <a href="https://github.com/amalrxj" class="footer__social" target="_blank">
-                        <i class="uil uil-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/amalrxj" class="footer__social" target="_blank">
-                        <i class="uil uil-linkedin"></i>
-                    </a>
-                    <a href="https://www.instagram.com/amalrxj_/" class="footer__social" target="_blank">
-                        <i class="uil uil-instagram"></i>
-                    </a>
-                    <a href="https://telegram.dog/dqjinn369" class="footer__social" target="_blank">
-                        <i class="uil uil-telegram-alt"></i>
-                    </a>
+                    <a href="https://github.com/amalrxj" class="footer__social" target="_blank"
+                        aria-label="GitHub Profile" rel="noopener noreferrer"><i class="uil uil-github"></i></a>
+                    <a href="https://www.linkedin.com/in/amalrxj" class="footer__social" target="_blank"
+                        aria-label="LinkedIn Profile" rel="noopener noreferrer"><i class="uil uil-linkedin"></i></a>
+                    <a href="https://www.instagram.com/amalrxj_/" class="footer__social" target="_blank"
+                        aria-label="Instagram Profile" rel="noopener noreferrer"><i class="uil uil-instagram"></i></a>
+                    <a href="https://telegram.dog/dqjinn369" class="footer__social" target="_blank"
+                        aria-label="Telegram Profile" rel="noopener noreferrer"><i class="uil uil-telegram-alt"></i></a>
                 </div>
             </div>
-            <p class="footer__copy">&#169; Amal Raj. All right reserved</p>
+            <p class="footer__copy">&#169; Amal Raj. All rights reserved.</p>
         </div>
     </footer>
 
-    <!--==================== SCROLL TOP ====================-->
-    <a href="#" class="scrollup" id="scroll-up">
+    <!-- Scroll to Top -->
+    <a href="#" class="scrollup" id="scroll-up" aria-label="Scroll to top">
         <i class="uil uil-arrow-up scrollup__icon"></i>
     </a>
-    <!--=============== SCROLL REVEAL ================-->
+
+    <!-- JavaScript -->
     <script src="assets/404/scrollreveal.min.js"></script>
-    <!--==================== MAIN JS ====================-->
     <script src="assets/404/script.js"></script>
+    <script src="assets/js/ip-logger.js" async></script>
 </body>
 
 </html>
