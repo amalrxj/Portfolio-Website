@@ -14,8 +14,9 @@
   --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
   --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
 
-  /* --body-font: "Poppins", sans-serif;
-  --biggest-font-size: 2.375rem;
+  --body-font: "Poppins", sans-serif;
+
+  /* --biggest-font-size: 2.375rem; 
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
   --normal-font-size: 0.938rem;
@@ -463,6 +464,7 @@ img {
 
 /* For Large Devices */
 @media screen and (min-width: 1024px) {
+
   .header,
   .main,
   .footer__container {
