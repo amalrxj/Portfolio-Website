@@ -13,6 +13,7 @@
   --title-color: hsl(var(--hue-color), 8%, 15%);
   --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
   --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
+  --scroll-up-color: hsl(var(--hue-color), 18%, 34%);
 
   --body-font: "Poppins", sans-serif;
 
@@ -56,6 +57,7 @@ body.dark-theme {
   --body-color: hsl(var(--hue-color), 28%, 12%);
   --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
   --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
+  --scroll-up-color: hsl(var(--hue-color),  69%, 61%);
 }
 
 /*========== Button Dark/Light ==========*/
@@ -320,7 +322,7 @@ img {
   position: fixed;
   right: 1rem;
   bottom: -20%;
-  background-color: var(--first-color);
+  background-color: var(--scroll-up-color);
   opacity: 0.8;
   padding: 0.2rem 0.3rem;
   border-radius: 0.4rem;
