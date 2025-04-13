@@ -1,6 +1,5 @@
 :root {
   --header-height: 3rem;
-
   --hue-color: 230;
   /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
 
@@ -35,8 +34,6 @@
   /* Between 13px and 14px */
   --smaller-font-size: clamp(0.75rem, 1vw, 0.813rem);
   /* Between 12px and 13px */
-
-
 }
 
 /* @media screen and (min-width: 1024px) {
@@ -55,12 +52,10 @@ body.dark-theme {
   --first-color-second: hsl(var(--hue-color), 30%, 8%);
   --title-color: hsl(var(--hue-color), 8%, 95%);
   --text-color: hsl(var(--hue-color), 8%, 75%);
-
   --body-color: hsl(var(--hue-color), 28%, 12%);
   --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
   --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
 }
-
 
 /*========== Button Dark/Light ==========*/
 .nav__btns {
@@ -326,7 +321,7 @@ img {
   bottom: -20%;
   background-color: var(--first-color);
   opacity: 0.8;
-  padding: 0 0.3rem;
+  padding: 0.2rem 0.3rem;
   border-radius: 0.4rem;
   z-index: 10;
   transition: 0.4s;
@@ -379,7 +374,7 @@ img {
   }
 
   100% {
-    transform: scale(.85, .85);
+    transform: scale(0.85, 0.85);
   }
 }
 
@@ -468,7 +463,6 @@ img {
 
 /* For Large Devices */
 @media screen and (min-width: 1024px) {
-
   .header,
   .main,
   .footer__container {
@@ -495,7 +489,7 @@ img {
   }
 }
 
-@media screen and (min-width:1048px) {
+@media screen and (min-width: 1048px) {
   .container {
     margin-right: auto;
     margin-left: auto;
@@ -503,7 +497,7 @@ img {
 }
 
 /* Fpr 2K Resolution */
-@media screen and (min-width:2048px) {
+@media screen and (min-width: 2048px) {
   body {
     zoom: 1.7;
   }
@@ -515,7 +509,7 @@ img {
 }
 
 /* Fpr 4K Resolution */
-@media screen and (min-width:3840px) {
+@media screen and (min-width: 3840px) {
   body {
     zoom: 3.5;
   }
