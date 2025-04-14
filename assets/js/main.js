@@ -27,24 +27,72 @@ function linkAction() {
 }
 navLink.forEach((n) => n.addEventListener("click", linkAction));
 
-/*==================== ACCORDION SKILLS ====================*/
+/*==================== SKILLS TAB ====================*/
+// const skillsContent = document.getElementsByClassName("skills__content"),
+//   skillsHeader = document.querySelectorAll(".skills__header");
+
+// function toggleSkills() {
+//   let itemClass = this.parentNode.className;
+
+//   for (let i = 0; i < skillsContent.length; i++) {
+//     skillsContent[i].className = "skills__content skills__close";
+//   }
+//   if (itemClass === "skills__content skills__close") {
+//     this.parentNode.className = "skills__content skills__open";
+//   }
+// }
+
+// skillsHeader.forEach((e) => {
+//   e.addEventListener("click", toggleSkills);
+// });
+
+/* ==================== UPDATED SKILLS TABS ==================== */
+
 const skillsContent = document.getElementsByClassName("skills__content"),
   skillsHeader = document.querySelectorAll(".skills__header");
+
+function animateSkillBars(parent) {
+  const bars = parent.querySelectorAll(".skills__pct");
+  bars.forEach((bar) => {
+    const targetWidth = bar.getAttribute("data-skill");
+    bar.style.width = targetWidth;
+  });
+}
+
+function resetSkillBars(parent) {
+  const bars = parent.querySelectorAll(".skills__pct");
+  bars.forEach((bar) => {
+    bar.style.width = "0";
+  });
+}
 
 function toggleSkills() {
   let itemClass = this.parentNode.className;
 
   for (let i = 0; i < skillsContent.length; i++) {
     skillsContent[i].className = "skills__content skills__close";
+    resetSkillBars(skillsContent[i]);
   }
+
   if (itemClass === "skills__content skills__close") {
     this.parentNode.className = "skills__content skills__open";
+    animateSkillBars(this.parentNode);
   }
 }
 
 skillsHeader.forEach((e) => {
   e.addEventListener("click", toggleSkills);
 });
+
+// 🧠 Animate bars in the first open section on page load
+window.addEventListener("DOMContentLoaded", () => {
+  for (let i = 0; i < skillsContent.length; i++) {
+    if (skillsContent[i].classList.contains("skills__open")) {
+      animateSkillBars(skillsContent[i]);
+    }
+  }
+});
+
 
 /*==================== SERVICES MODAL ====================*/
 const modalViews = document.querySelectorAll(".services__modal"),
@@ -66,6 +114,7 @@ modalCloses.forEach((modalClose) => {
     });
   });
 });
+
 /*==================== PORTFOLIO SWIPER  ====================*/
 let swiper = new Swiper(".portfolio__container", {
   cssMode: true,
