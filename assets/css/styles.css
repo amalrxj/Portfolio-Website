@@ -497,7 +497,7 @@ img {
   background-color: var(--first-color);
   transition: width 0.5s ease-in-out;
 }
-
+/* 
 .skills__python {
   width: 85%;
 }
@@ -544,7 +544,23 @@ img {
 
 .skills__aws {
   width: 85%;
+} */
+
+.skills__python,
+.skills__javascript,
+.skills__html,
+.skills__css,
+.skills__nodejs,
+.skills__nextjs,
+.skills__django,
+.skills__react,
+.skills__mongo,
+.skills__github,
+.skills__figma,
+.skills__aws {
+  width: 0; /* Initially 0 */
 }
+
 
 .skills__close .skills__list {
   height: 0;
