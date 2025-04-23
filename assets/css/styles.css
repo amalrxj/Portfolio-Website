@@ -228,6 +228,11 @@ img {
   font-weight: var(--font-medium);
 }
 
+.nav__link,
+.button {
+  transition: color 0.3s, background-color 0.3s;
+}
+
 .nav__icon {
   font-size: 1.125rem;
 }
@@ -494,6 +499,14 @@ img {
 .skills__pct {
   display: block;
   background-color: var(--first-color);
+  transition: width 0.5s ease-in-out;
+}
+
+.skills__pct {
+  display: block;
+  width: 0;
+  background-color: var(--first-color);
+  transition: width 0.6s ease-in-out;
 }
 
 .skills__python {
@@ -542,6 +555,21 @@ img {
 
 .skills__aws {
   width: 85%;
+} */
+
+.skills__python,
+.skills__javascript,
+.skills__html,
+.skills__css,
+.skills__nodejs,
+.skills__nextjs,
+.skills__django,
+.skills__react,
+.skills__mongo,
+.skills__github,
+.skills__figma,
+.skills__aws {
+  width: 0; /* Initially 0 */
 }
 
 .skills__close .skills__list {

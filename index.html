@@ -106,7 +106,7 @@
                                 165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
                                 129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
                                 -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
-                <image class="home__blob-img" x="25" y="14" href="assets/img/profile.webp" />
+                <!-- <image class="home__blob-img" x="25" y="14" href="assets/img/profile.webp" /> -->
               </g>
             </svg>
           </div>
@@ -114,8 +114,7 @@
             <h1 class="home__title">Hi, I'am Amal</h1>
             <h3 class="home__subtitle">Frontend Developer</h3>
             <p class="home__desc">
-              High level experience in web design and development knowledge,
-              producing quality work.
+              Experienced in creating high-quality websites with modern design and development practices.
             </p>
             <a href="#contact" aria-label="Contact Me" class="button button--flex">
               Contact Me<i class="uil uil-message button__icon"></i>
@@ -157,7 +156,7 @@
             </div>
           </div>
           <div class="about__buttons">
-            <a download="" href="assets/pdf/Alexa-Cv.pdf" class="button button--flex" aria-label="Download Resume">
+            <a download="" href="assets/img/Resume-AmalRaj.pdf" class="button button--flex" aria-label="Download Resume">
               Download CV
               <i class="uil uil-download-alt button__icon"></i>
             </a>
@@ -188,7 +187,7 @@
                   <span class="skills__number">85%</span>
                 </div>
                 <div class="skills__bar">
-                  <span class="skills__pct skills__python"></span>
+                  <span class="skills__pct skills__python" data-skill="85%"></span>
                 </div>
               </div>
               <div class="skills__data">
@@ -197,7 +196,7 @@
                   <span class="skills__number">90%</span>
                 </div>
                 <div class="skills__bar">
-                  <span class="skills__pct skills__javascript"></span>
+                  <span class="skills__pct skills__javascript" data-skill="90%"></span>
                 </div>
               </div>
               <div class="skills__data">
@@ -206,7 +205,7 @@
                   <span class="skills__number">95%</span>
                 </div>
                 <div class="skills__bar">
-                  <span class="skills__pct skills__html"></span>
+                  <span class="skills__pct skills__html" data-skill="95%"></span>
                 </div>
               </div>
               <div class="skills__data">
@@ -215,7 +214,7 @@
                   <span class="skills__number">90%</span>
                 </div>
                 <div class="skills__bar">
-                  <span class="skills__pct skills__css"></span>
+                  <span class="skills__pct skills__css" data-skill="90%"></span>
                 </div>
               </div>
             </div>
@@ -237,7 +236,7 @@
                   <span class="skills__number">90%</span>
                 </div>
                 <div class="skills__bar">
-                  <span class="skills__pct skills__nodejs"></span>
+                  <span class="skills__pct skills__nodejs" data-skill="90%"></span>
                 </div>
               </div>
               <div class="skills__data">
@@ -246,7 +245,7 @@
                   <span class="skills__number">80%</span>
                 </div>
                 <div class="skills__bar">
-                  <span class="skills__pct skills__nextjs"></span>
+                  <span class="skills__pct skills__nextjs" data-skill="80%"></span>
                 </div>
               </div>
               <div class="skills__data">
@@ -255,7 +254,7 @@
                   <span class="skills__number">75%</span>
                 </div>
                 <div class="skills__bar">
-                  <span class="skills__pct skills__django"></span>
+                  <span class="skills__pct skills__django" data-skill="75%"></span>
                 </div>
               </div>
               <div class="skills__data">
@@ -264,7 +263,7 @@
                   <span class="skills__number">85%</span>
                 </div>
                 <div class="skills__bar">
-                  <span class="skills__pct skills__react"></span>
+                  <span class="skills__pct skills__react" data-skill="85%"></span>
                 </div>
               </div>
             </div>
@@ -286,7 +285,7 @@
                   <span class="skills__number">90%</span>
                 </div>
                 <div class="skills__bar">
-                  <span class="skills__pct skills__mongo"></span>
+                  <span class="skills__pct skills__mongo" data-skill="90%"></span>
                 </div>
               </div>
               <div class="skills__data">
@@ -295,7 +294,7 @@
                   <span class="skills__number">95%</span>
                 </div>
                 <div class="skills__bar">
-                  <span class="skills__pct skills__github"></span>
+                  <span class="skills__pct skills__github" data-skill="95%"></span>
                 </div>
               </div>
               <div class="skills__data">
@@ -304,7 +303,7 @@
                   <span class="skills__number">75%</span>
                 </div>
                 <div class="skills__bar">
-                  <span class="skills__pct skills__figma"></span>
+                  <span class="skills__pct skills__figma" data-skill="75%"></span>
                 </div>
               </div>
               <div class="skills__data">
@@ -313,7 +312,7 @@
                   <span class="skills__number">85%</span>
                 </div>
                 <div class="skills__bar">
-                  <span class="skills__pct skills__aws"></span>
+                  <span class="skills__pct skills__aws" data-skill="85%"></span>
                 </div>
               </div>
             </div>
@@ -741,13 +740,14 @@
     <i class="uil uil-arrow-up scrollup__icon"></i>
   </a>
   <!--==================== SWIPER JS ====================-->
-  <script src="assets/js/swiper-bundle.min.js"></script>
+  <script src="assets/js/swiper-bundle.min.js" ></script>
   <!--=============== LAZYSIZES ===============-->
   <script src="assets/js/lazysizes.min.js" async></script>
   <!--============= EMAILJS ==========-->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" async></script>
   <!--==================== MAIN JS ====================-->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/skill.js"></script>
 </body>
 
 </html>
