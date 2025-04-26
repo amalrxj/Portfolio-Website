@@ -18,6 +18,40 @@ if (navClose) {
   });
 }
 
+/*==================== DARK LIGHT THEME ====================*/
+const themeButton = document.getElementById("theme-button");
+const darkTheme = "dark-theme";
+const lightIcon = "uil-sun";
+const darkIcon = "uil-moon";
+
+const selectedTheme = localStorage.getItem("selected-theme");
+const selectedIcon = localStorage.getItem("selected-icon");
+
+const getCurrentTheme = () =>
+  document.body.classList.contains(darkTheme) ? "dark" : "light";
+const getCurrentIcon = () =>
+  themeButton.classList.contains(lightIcon) ? darkIcon : lightIcon;
+
+// Apply previously saved theme and icon
+if (selectedTheme) {
+  document.body.classList[selectedTheme === "dark" ? "add" : "remove"](
+    darkTheme
+  );
+  themeButton.classList[selectedIcon === darkIcon ? "add" : "remove"](
+    lightIcon
+  );
+}
+
+// Add toggle functionality
+if (themeButton) {
+  themeButton.addEventListener("click", () => {
+    document.body.classList.toggle(darkTheme);
+    themeButton.classList.toggle(lightIcon);
+    localStorage.setItem("selected-theme", getCurrentTheme());
+    localStorage.setItem("selected-icon", getCurrentIcon());
+  });
+}
+
 /*==================== REMOVE MENU MOBILE ====================*/
 const navLink = document.querySelectorAll(".nav__link");
 
@@ -93,7 +127,6 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-
 /*==================== SERVICES MODAL ====================*/
 const modalViews = document.querySelectorAll(".services__modal"),
   modalBtns = document.querySelectorAll(".services__button"),
@@ -128,6 +161,8 @@ let swiper = new Swiper(".portfolio__container", {
     clickable: true,
   },
 });
+
+
 /* ===================== CONTACT ME ======================= */
 const contactForm = document.getElementById("contact-form"),
   contactMsg = document.getElementById("contact-msg");
@@ -194,36 +229,11 @@ function scrollHeader() {
 window.addEventListener("scroll", scrollHeader);
 
 /*==================== SHOW SCROLL UP ====================*/
-function scrollUp(){
-  const scrollUp = document.getElementById('scroll-up');
+function scrollUp() {
+  const scrollUp = document.getElementById("scroll-up");
   // When the scroll is higher than 560 viewport height, add the show-scroll class to the a tag with the scroll-top class
-  if(this.scrollY >= 560) scrollUp.classList.add('show-scroll'); else scrollUp.classList.remove('show-scroll')
+  if (this.scrollY >= 560) scrollUp.classList.add("show-scroll");
+  else scrollUp.classList.remove("show-scroll");
 }
-window.addEventListener('scroll', scrollUp)
+window.addEventListener("scroll", scrollUp);
 
-const themeButton = document.getElementById('theme-button')
-const darkTheme = 'dark-theme'
-const lightIcon = 'uil-sun'
-const darkIcon = 'uil-moon'
-
-const selectedTheme = localStorage.getItem('selected-theme')
-const selectedIcon = localStorage.getItem('selected-icon')
-
-const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
-const getCurrentIcon = () => themeButton.classList.contains(lightIcon) ? darkIcon : lightIcon
-
-// Apply previously saved theme and icon
-if (selectedTheme) {
-  document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
-  themeButton.classList[selectedIcon === darkIcon ? 'add' : 'remove'](lightIcon)
-}
-
-// Add toggle functionality
-if (themeButton) {
-  themeButton.addEventListener('click', () => {
-    document.body.classList.toggle(darkTheme)
-    themeButton.classList.toggle(lightIcon)
-    localStorage.setItem('selected-theme', getCurrentTheme())
-    localStorage.setItem('selected-icon', getCurrentIcon())
-  })
-}
