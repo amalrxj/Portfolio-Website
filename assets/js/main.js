@@ -18,6 +18,40 @@ if (navClose) {
   });
 }
 
+/*==================== DARK LIGHT THEME ====================*/
+const themeButton = document.getElementById("theme-button");
+const darkTheme = "dark-theme";
+const lightIcon = "uil-sun";
+const darkIcon = "uil-moon";
+
+const selectedTheme = localStorage.getItem("selected-theme");
+const selectedIcon = localStorage.getItem("selected-icon");
+
+const getCurrentTheme = () =>
+  document.body.classList.contains(darkTheme) ? "dark" : "light";
+const getCurrentIcon = () =>
+  themeButton.classList.contains(lightIcon) ? darkIcon : lightIcon;
+
+// Apply previously saved theme and icon
+if (selectedTheme) {
+  document.body.classList[selectedTheme === "dark" ? "add" : "remove"](
+    darkTheme
+  );
+  themeButton.classList[selectedIcon === darkIcon ? "add" : "remove"](
+    lightIcon
+  );
+}
+
+// Add toggle functionality
+if (themeButton) {
+  themeButton.addEventListener("click", () => {
+    document.body.classList.toggle(darkTheme);
+    themeButton.classList.toggle(lightIcon);
+    localStorage.setItem("selected-theme", getCurrentTheme());
+    localStorage.setItem("selected-icon", getCurrentIcon());
+  });
+}
+
 /*==================== REMOVE MENU MOBILE ====================*/
 const navLink = document.querySelectorAll(".nav__link");
 
@@ -27,23 +61,70 @@ function linkAction() {
 }
 navLink.forEach((n) => n.addEventListener("click", linkAction));
 
-/*==================== ACCORDION SKILLS ====================*/
+/*==================== SKILLS TAB ====================*/
+// const skillsContent = document.getElementsByClassName("skills__content"),
+//   skillsHeader = document.querySelectorAll(".skills__header");
+
+// function toggleSkills() {
+//   let itemClass = this.parentNode.className;
+
+//   for (let i = 0; i < skillsContent.length; i++) {
+//     skillsContent[i].className = "skills__content skills__close";
+//   }
+//   if (itemClass === "skills__content skills__close") {
+//     this.parentNode.className = "skills__content skills__open";
+//   }
+// }
+
+// skillsHeader.forEach((e) => {
+//   e.addEventListener("click", toggleSkills);
+// });
+
+/* ==================== UPDATED SKILLS TABS ==================== */
+
 const skillsContent = document.getElementsByClassName("skills__content"),
   skillsHeader = document.querySelectorAll(".skills__header");
+
+function animateSkillBars(parent) {
+  const bars = parent.querySelectorAll(".skills__pct");
+  bars.forEach((bar) => {
+    const targetWidth = bar.getAttribute("data-skill");
+    bar.style.width = targetWidth;
+  });
+}
+
+function resetSkillBars(parent) {
+  const bars = parent.querySelectorAll(".skills__pct");
+  bars.forEach((bar) => {
+    bar.style.width = "0";
+  });
+}
 
 function toggleSkills() {
   let itemClass = this.parentNode.className;
 
   for (let i = 0; i < skillsContent.length; i++) {
     skillsContent[i].className = "skills__content skills__close";
+    resetSkillBars(skillsContent[i]);
   }
+
   if (itemClass === "skills__content skills__close") {
     this.parentNode.className = "skills__content skills__open";
+    animateSkillBars(this.parentNode);
   }
 }
 
 skillsHeader.forEach((e) => {
   e.addEventListener("click", toggleSkills);
+});
+
+// 🧠 Animate bars in the first open section on page load
+window.addEventListener("DOMContentLoaded", () => {
+  for (let i = 0; i < skillsContent.length; i++) {
+    if (skillsContent[i].classList.contains("skills__open")) {
+      animateSkillBars(skillsContent[i]);
+    }
+  }
 });
 
 /*==================== SERVICES MODAL ====================*/
@@ -66,6 +147,7 @@ modalCloses.forEach((modalClose) => {
     });
   });
 });
+
 /*==================== PORTFOLIO SWIPER  ====================*/
 let swiper = new Swiper(".portfolio__container", {
   cssMode: true,
@@ -79,6 +161,8 @@ let swiper = new Swiper(".portfolio__container", {
     clickable: true,
   },
 });
+
+
 /* ===================== CONTACT ME ======================= */
 const contactForm = document.getElementById("contact-form"),
   contactMsg = document.getElementById("contact-msg");
@@ -145,39 +229,11 @@ function scrollHeader() {
 window.addEventListener("scroll", scrollHeader);
 
 /*==================== SHOW SCROLL UP ====================*/
-function scrollUp(){
-  const scrollUp = document.getElementById('scroll-up');
+function scrollUp() {
+  const scrollUp = document.getElementById("scroll-up");
   // When the scroll is higher than 560 viewport height, add the show-scroll class to the a tag with the scroll-top class
-  if(this.scrollY >= 560) scrollUp.classList.add('show-scroll'); else scrollUp.classList.remove('show-scroll')
+  if (this.scrollY >= 560) scrollUp.classList.add("show-scroll");
+  else scrollUp.classList.remove("show-scroll");
 }
-window.addEventListener('scroll', scrollUp)
+window.addEventListener("scroll", scrollUp);
 
-/*==================== DARK LIGHT THEME ====================*/
-const themeButton = document.getElementById('theme-button')
-const darkTheme = 'dark-theme'
-const iconTheme = 'uil-sun'
-
-// Previously selected topic (if user selected)
-const selectedTheme = localStorage.getItem('selected-theme')
-const selectedIcon = localStorage.getItem('selected-icon')
-
-// We obtain the current theme that the interface has by validating the dark-theme class
-const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
-const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'uil-moon' : 'uil-sun'
-
-// We validate if the user previously chose a topic
-if (selectedTheme) {
-  // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
-  document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
-  themeButton.classList[selectedIcon === 'uil-moon' ? 'add' : 'remove'](iconTheme)
-}
-
-// Activate / deactivate the theme manually with the button
-themeButton.addEventListener('click', () => {
-    // Add or remove the dark / icon theme
-    document.body.classList.toggle(darkTheme)
-    themeButton.classList.toggle(iconTheme)
-    // We save the theme and the current icon that the user chose
-    localStorage.setItem('selected-theme', getCurrentTheme())
-    localStorage.setItem('selected-icon', getCurrentIcon())
-})
